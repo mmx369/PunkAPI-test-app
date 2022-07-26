@@ -35,8 +35,8 @@ const nextConfig = (phase) => {
       loader: 'akamai',
       path: '',
     },
-    basePath: '/nextjs-pages',
-    assetPrefix: '/nextjs-pages',
+    basePath: '/punkapi-test-app',
+    assetPrefix: '/punkapi-test-app',
   }
 }
 
