@@ -23,7 +23,8 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ItemsDetails),
-/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps),
+/* harmony export */   "getStaticPaths": () => (/* binding */ getStaticPaths)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
@@ -154,7 +155,7 @@ function ItemsDetails({ beer  }) {
         })
     });
 };
-const getServerSideProps = async (ctx)=>{
+const getStaticProps = async (ctx)=>{
     const beerId = ctx.params.id;
     const data = await fetch(`https://api.punkapi.com/v2/beers/${beerId}`);
     const [beer] = await data.json();
@@ -172,6 +173,22 @@ const getServerSideProps = async (ctx)=>{
         }
     };
 };
+async function getStaticPaths() {
+    const pathsArr = [];
+    for(let i = 1; i <= 325; i++){
+        pathsArr.push({
+            params: {
+                id: i.toString()
+            }
+        });
+    }
+    return {
+        paths: [
+            ...pathsArr
+        ],
+        fallback: false
+    };
+}
 
 
 /***/ }),

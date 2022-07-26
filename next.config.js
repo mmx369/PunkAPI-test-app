@@ -32,6 +32,8 @@ const nextConfig = (phase) => {
         'images.punkapi.com',
         'distribuzionemoderna-lemmon.softecspa.net',
       ],
+      loader: 'akamai',
+      path: '',
     },
   }
 }

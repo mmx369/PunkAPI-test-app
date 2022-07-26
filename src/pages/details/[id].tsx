@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
-import { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -75,8 +75,8 @@ export default function ItemsDetails({ beer }: TProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (
-  ctx: GetServerSidePropsContext
+export const getStaticProps: GetStaticProps = async (
+  ctx: GetStaticPropsContext
 ) => {
   const beerId = ctx.params!.id as string
 
@@ -94,4 +94,17 @@ export const getServerSideProps: GetServerSideProps = async (
   }
 
   return { props: { beer } }
+}
+
+export async function getStaticPaths() {
+  const pathsArr = []
+
+  for (let i = 1; i <= 325; i++) {
+    pathsArr.push({ params: { id: i.toString() } })
+  }
+
+  return {
+    paths: [...pathsArr],
+    fallback: false,
+  }
 }
