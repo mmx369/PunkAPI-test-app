@@ -35,6 +35,8 @@ const nextConfig = (phase) => {
       loader: 'akamai',
       path: '',
     },
+    basePath: '/nextjs-pages',
+    assetPrefix: '/nextjs-pages',
   }
 }
 
