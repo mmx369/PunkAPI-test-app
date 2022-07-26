@@ -17,7 +17,7 @@ type TProps = {
 export const CardBeer = ({ beer }: TProps) => {
   if (!beer.image_url) {
     beer.image_url =
-      'http://distribuzionemoderna-lemmon.softecspa.net/distribuzione-moderna/lemmon/media/images/files/31d3/50a3/-fef/1-43/59-8/b06-/c5ca/215a/e6d7/original/Immagine.png?1528983963'
+      'https://www.carlsberg.com/media/1298/card_regular_1883.jpg?anchor=center&mode=crop&width=480&height=630'
   }
 
   return (

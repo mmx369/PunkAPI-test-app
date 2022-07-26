@@ -28,10 +28,7 @@ const nextConfig = (phase) => {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-      domains: [
-        'images.punkapi.com',
-        'distribuzionemoderna-lemmon.softecspa.net',
-      ],
+      domains: ['images.punkapi.com'],
       loader: 'akamai',
       path: '',
     },
