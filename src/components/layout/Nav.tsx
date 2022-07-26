@@ -8,7 +8,7 @@ export const Nav = () => {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Link href='/'>
-            <a>Bear Test App - Punk API</a>
+            <a>Beer Test App - Punk API</a>
           </Link>
         </Toolbar>
       </Container>
